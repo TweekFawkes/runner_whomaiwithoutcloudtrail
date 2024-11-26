@@ -2,8 +2,8 @@ inputs:
   - name: accesskeyid
     prompt: AWS Access Key ID
     type: text
-  - name: AWS Secret Access Key
-    prompt: ip_address
+  - name: secretaccesskey
+    prompt: AWS Secret Access Key
     type: text
 
 launch:
