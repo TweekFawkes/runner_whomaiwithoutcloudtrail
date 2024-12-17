@@ -1,4 +1,9 @@
-inputs:
+runner:
+  name: WhoAmi w/o CloudTrail Logs
+  description: This Leverages an AWS API Endpoint for SQS with the Action of ListQueues, which lacks CloudTrail logging as of 20240708 and returns the username associated with the credentials as part of the error messaging that is return from the api endpoint when the user does not have access to the SQS service. See the AWS docs and references below for more information.
+  version: 0.0.2
+
+webform:
   - name: accesskeyid
     prompt: AWS Access Key ID
     type: text
@@ -7,9 +12,4 @@ inputs:
     type: text
 
 launch:
-  program: app.py
-  args:
-    - '--accesskeyid'
-    - '${accesskeyid}'
-    - '--secretaccesskey'
-    - '${secretaccesskey}'
+  command: app.py --accesskeyid ${accesskeyid} --secretaccesskey ${secretaccesskey}
